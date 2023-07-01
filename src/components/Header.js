@@ -165,7 +165,7 @@ const NavMenu = styled.div`
       white-space: nowrap;
       position: relative;
 
-      &:before {
+      &::before {
         content: "";
         display: block;
         background-color: rgb(249, 249, 249);
@@ -186,7 +186,7 @@ const NavMenu = styled.div`
   }
 
   &:hover {
-    span:before {
+    span::before {
       transform: scaleX(1);
       visibility: visible;
       opacity: 1 !important;
