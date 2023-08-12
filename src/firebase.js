@@ -5,7 +5,7 @@ import {
   collection,
   query,
   where,
-  getDocs,
+  getDoc,
   getFirestore,
 } from "firebase/firestore";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
@@ -38,6 +38,6 @@ export {
   collection,
   query,
   where,
-  getDocs,
+  getDoc,
 };
 export default db;

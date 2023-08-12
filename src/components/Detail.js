@@ -1,14 +1,34 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
+import db, { doc, getDoc } from "../firebase";
 
 const Detail = (props) => {
+  const { id } = useParams();
+  const [detailData, setDetailData] = useState({});
+
+  useEffect(() => {
+    const docRef = doc(db, "movies", id);
+    getDoc(docRef)
+      .then((doc) => {
+        if (doc.exists()) {
+          setDetailData(doc.data());
+        } else {
+          console.log("no such document in firebase ");
+        }
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
+  }, [id]);
+
   return (
     <Container>
       <Background>
-        <img src="" alt="" />
+        <img src={detailData.backgroundImg} alt={detailData.title} />
       </Background>
-
       <ImageTitle>
-        <img src="" alt="" />
+        <img src={detailData.titleImg} alt={detailData.title} />
       </ImageTitle>
       <ContentMeta>
         <Controls>
@@ -30,6 +50,8 @@ const Detail = (props) => {
             </div>
           </GroupWatch>
         </Controls>
+        <Subtitle>{detailData.subtitle}</Subtitle>
+        <Description>{detailData.description}</Description>
       </ContentMeta>
     </Container>
   );
@@ -183,6 +205,27 @@ const GroupWatch = styled.div`
     img {
       width: 100%;
     }
+  }
+`;
+
+const Subtitle = styled.div`
+  color: rgb(249, 249, 249);
+  font-size: 15px;
+  min-height: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
+const Description = styled.div`
+  line-height: 1.4;
+  font-size: 20px;
+  padding: 16px 0px;
+  color: rgb(249, 249, 249);
+
+  @media (max-width: 768px) {
+    font-size: 12px;
   }
 `;
 
