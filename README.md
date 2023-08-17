@@ -1,3 +1,10 @@
+![スクリーンショット 2023-08-17 10 49 34](https://github.com/aiueda27/disney-clone/assets/125167145/df003d29-e21b-4265-8c09-e7ba481c0343)
+
+
+![スクリーンショット 2023-08-17 11 01 18](https://github.com/aiueda27/disney-clone/assets/125167145/982fe240-0f47-4bb6-b808-ffbe06883cbd)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
