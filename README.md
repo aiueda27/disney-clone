@@ -4,9 +4,6 @@ https://github.com/aiueda27/disney-clone/assets/125167145/37569325-b31e-4b83-833
 
 
 
-![スクリーンショット 2023-08-17 10 49 34](https://github.com/aiueda27/disney-clone/assets/125167145/df003d29-e21b-4265-8c09-e7ba481c0343)
-
-
 
 
 # Getting Started with Create React App
