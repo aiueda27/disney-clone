@@ -1,7 +1,11 @@
+
+
+https://github.com/aiueda27/disney-clone/assets/125167145/37569325-b31e-4b83-8332-90845be5f4da
+
+
+
 ![スクリーンショット 2023-08-17 10 49 34](https://github.com/aiueda27/disney-clone/assets/125167145/df003d29-e21b-4265-8c09-e7ba481c0343)
 
-
-![スクリーンショット 2023-08-17 11 01 18](https://github.com/aiueda27/disney-clone/assets/125167145/982fe240-0f47-4bb6-b808-ffbe06883cbd)
 
 
 
