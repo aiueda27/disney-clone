@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import ImgSlider from "./ImgSlider";
-import NewDisney from "./NewDisney";
-import Originals from "./Originals";
-import Recommends from "./Recommends";
-import Trending from "./Trending";
+import Movies from "./Movies";
 import Viewers from "./Viewers";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import db, { onSnapshot, collection, query } from "../firebase";
 import { setMovies } from "../features/movie/movieSlice";
 import { selectUserName } from "../features/user/userSlice";
+import {
+  selectRecommend,
+  selectNewDisney,
+  selectOriginal,
+  selectTrending,
+} from "../features/movie/movieSlice";
 
 const Home = (props) => {
   const dispatch = useDispatch();
@@ -18,6 +21,13 @@ const Home = (props) => {
   let newDisneys = [];
   let originals = [];
   let trending = [];
+
+  const categories = [
+    { title: "Recommended for you", selector: selectRecommend },
+    { title: "New to Disney+", selector: selectNewDisney },
+    { title: "Originals", selector: selectOriginal },
+    { title: "Trending", selector: selectTrending },
+  ];
 
   useEffect(() => {
     const q = query(collection(db, "movies"));
@@ -57,10 +67,9 @@ const Home = (props) => {
     <Container>
       <ImgSlider />
       <Viewers />
-      <Recommends />
-      <NewDisney />
-      <Originals />
-      <Trending />
+      {categories.map((category) => (
+        <Movies category={category} />
+      ))}
     </Container>
   );
 };
